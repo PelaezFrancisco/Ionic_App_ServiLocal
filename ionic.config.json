@@ -1,0 +1,7 @@
+{
+  "name": "FinalAppMoviles",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

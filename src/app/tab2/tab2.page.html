@@ -1,17 +1,91 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Busqueda
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Busqueda -->
+  <div>
+    <ion-card class="cardIndex">
+      <ion-card-header>
+        <ion-card-title>No lo Encuentras?</ion-card-title>
+      </ion-card-header>
+      <ion-searchbar class="inedxSearch" value="Buscalo!"></ion-searchbar>
+    </ion-card>
+  </div>
+  <!-- Categorias -->
+  <div>
+    <ion-card class="cardIndex">
+      <h3 class="ion-text-center">Categorias</h3>
+      <ion-grid class="ion-grid-padding">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+        <ion-row>
+          <ion-col>
+           <ion-card>
+            <img class="imgCat" src="../../assets/images/Categorias/Farmacia_Icon.png"/>
+            <h5 class="ion-text-center">Farmacias</h5>
+           </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+              <img class="imgCat" src="../../assets/images/Categorias/Panaderia_Icon.png"/>
+              <h5 class="ion-text-center">Panaderias</h5>
+             </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+           <ion-card>
+            <img class="imgCat" src="../../assets/images/Categorias/Licor_Icon.png"/>
+            <h5 class="ion-text-center">Licorerias</h5>
+           </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+              <img class="imgCat" src="../../assets/images/Categorias/Libreria_Icon.png"/>
+              <h5 class="ion-text-center">Liberias</h5>
+             </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+           <ion-card>
+            <img class="imgCat" src="../../assets/images/Categorias/Cafe_Icon.png"/>
+            <h5 class="ion-text-center">Cafeterias</h5>
+           </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+              <img class="imgCat" class="imgCat" src="../../assets/images/Categorias/Cars_Icon.png"/>
+              <h5 class="ion-text-center">Alquiler Autos</h5>
+             </ion-card>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+           <ion-card>
+            <img class="imgCat" src="../../assets/images/Categorias/Food_Icon.png"/>
+            <h5 class="ion-text-center">Restaurantes</h5>
+           </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card>
+              <img class="imgCat" src="../../assets/images/Categorias/Tools_Icon.png"/>
+              <h5 class="ion-text-center">Ferreterias</h5>
+             </ion-card>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-card>
+  </div>
+
+  
+
 </ion-content>

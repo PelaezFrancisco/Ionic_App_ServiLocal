@@ -1,0 +1,71 @@
+<ion-content>
+
+    <ion-grid class="grid1">
+
+        <ion-row class="row1">
+            <ion-col>
+
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="row2">
+            <ion-col>
+
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+    <ion-slide>
+        <div class="contaier-login">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-label>Registrarse</ion-label>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-list>
+
+                            <ion-item>
+                                <ion-icon name="person" class="icon-login"></ion-icon>
+                                <ion-input name="nombre" type="text" required placeholder="Nombre"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-icon name="call-outline"></ion-icon>
+                                <ion-input name="telefono" type="text" required placeholder="Telefono"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-icon name="mail-outline"></ion-icon>
+                                <ion-input name="email" type="text" required placeholder="Email" [(ngModel)]="user.email"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-icon name="lock-open-outline"></ion-icon>
+                                <ion-input name="password1" type="password" required placeholder="Contraseña" [(ngModel)]="user.password"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-icon name="lock-open-outline"></ion-icon>
+                                <ion-input name="password2" type="password" required placeholder="Repetir Contraseña"></ion-input>
+                            </ion-item>
+
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-button fill="solid" expand="full" (click)="onRegister()">
+                            Registrarse
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-label>
+                            <h3>¿Olvido la contraseña?</h3>
+                        </ion-label>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </ion-slide>

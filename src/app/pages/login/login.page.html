@@ -1,0 +1,73 @@
+<ion-content>
+
+    <ion-grid class="grid1">
+
+        <ion-row class="row1">
+            <ion-col>
+
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+    <ion-slide>
+        <div class="contaier-login">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-label>Iniciar Sesion</ion-label>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-list>
+                            <ion-item>
+                                <ion-icon name="person" class="icon-login"></ion-icon>
+                                <ion-input name="user" type="text" required placeholder="Usuario" [(ngModel)]="user.email"></ion-input>
+                            </ion-item>
+                            <br />
+                            <ion-item>
+                                <ion-icon name="lock-open-outline"></ion-icon>
+                                <ion-input name="password" type="password" required placeholder="Contraseña" [(ngModel)]="user.password"></ion-input>
+                            </ion-item>
+
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-button fill="solid" expand="full" (click)="onLogin()">
+                            Entrar
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-label>
+                            <h3>Iniciar Sesion con</h3>
+                        </ion-label>
+                    </ion-col>
+                </ion-row>
+                <ion-button>
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </ion-button>
+
+                <ion-button (click)="login()" *ngIf="showLoginButton">
+                    <ion-icon name="logo-google"></ion-icon>
+                </ion-button>
+                <ion-row>
+                    <ion-col>
+                        <ion-label>
+                            <h3>¿No tienes cuenta ? Registrate</h3>
+
+                            <ion-button [href]="registrarse">Registrarse</ion-button>
+                        </ion-label>
+                    </ion-col>
+                </ion-row>
+                <ion-label>
+                    <button (click)="logout()" *ngIf="showLogoutButton">Log out</button>
+                </ion-label>
+
+            </ion-grid>
+        </div>
+    </ion-slide>

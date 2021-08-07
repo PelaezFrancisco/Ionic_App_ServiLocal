@@ -55,7 +55,7 @@ user: User = new User();
   async login() {
     const user = await this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     console.log(user);
-    this.router.navigateByUrl('/tab4');
+    this.router.navigateByUrl('/tab1');
     // TODO sign into offline app
   }
 
@@ -80,7 +80,7 @@ user: User = new User();
     
     if (user) {
       console.log("Successfully logedd in!")
-      this.router.navigateByUrl('/tab4');
+      this.router.navigateByUrl('/tab1');
     }
   }
 

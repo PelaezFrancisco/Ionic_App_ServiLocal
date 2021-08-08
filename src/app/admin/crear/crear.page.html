@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Agregar Productos
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+        <ion-img src="/assets/shapes.svg"></ion-img>
+        <ion-card-header>
+        </ion-card-header>
+        <ion-card-content>
+            <form>
+                <ion-row>
+                    <ion-col>
+                        <ion-list>
+                            <ion-card>
+                                <ion-item>
+                                    <ion-label>Nombre: </ion-label>
+                                    <ion-input name="nombre" #nombre type="text" required placeholder=" "></ion-input>
+                                </ion-item>
+                            </ion-card>
+                            <ion-card>
+                                <ion-item>
+                                    <ion-label>Descripcion: </ion-label>
+                                    <ion-input name="descripcion" #descripcion type="text" required placeholder=" "></ion-input>
+                                </ion-item>
+                            </ion-card>
+                            <ion-card>
+                                <ion-item>
+                                    <ion-label>Precio: </ion-label>
+                                    <ion-input name="precio" #precio type="text" required placeholder=" "></ion-input>
+                                </ion-item>
+                            </ion-card>
+                            <ion-card>
+                                <ion-item>
+                                    <ion-label>Stock: </ion-label>
+                                    <ion-input name="Stock" #stock type="text" required placeholder=" "></ion-input>
+                                </ion-item>
+                            </ion-card>
+                            <ion-card>
+                                <ion-item>
+                                    <ion-label>Imagen: </ion-label>
+                                    <ion-input name="image" #image type="file" required></ion-input>
+                                </ion-item>
+                            </ion-card>
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-button color="success" expand="full" type="submit">
+                            Agregar
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </form>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

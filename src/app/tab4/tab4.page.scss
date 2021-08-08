@@ -1,49 +1,51 @@
-.imgCat{
+.imgCat {
     overflow: hidden;
     border-radius: 50% !important;
     margin: 0;
     padding: 0;
 }
 
-.colUser{
+.colUser {
     min-width: 50%;
 }
 
-.btnEditar{
+.btnEditar {
     position: relative;
     left: 50%;
 }
 
-.insideCard{
+.insideCard {
     position: relative;
     left: 5%;
 }
 
-.btnEditarPass{
+.btnEditarPass {
     position: relative;
     left: 6.7rem;
     top: 1rem;
 }
 
-.btnEditarPago{
+.btnEditarPago {
     position: relative;
     left: 2.2rem;
     top: 1rem;
 }
-.btnPriv{
+
+.btnPriv {
     position: relative;
     left: 2.4rem;
     top: 1rem;
 }
-.btnFAQ{
+
+.btnFAQ {
     position: relative;
     left: 2.4rem;
     top: 0rem;
 }
 
-.btnCerrar{
+.btnCerrar {
     position: relative;
-    width:100%;
+    width: 100%;
     left: 75%;
     top: 0rem;
 }

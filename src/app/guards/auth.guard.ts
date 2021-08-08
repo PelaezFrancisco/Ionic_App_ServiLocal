@@ -3,13 +3,36 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } fro
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { take, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    throw new Error('Method not implemented.');
+  constructor(private authSrv: AuthService, private router: Router ){}
+
+  canActivate(
+    route: ActivatedRouteSnapshot, 
+    state: RouterStateSnapshot
+  ): 
+  | Observable<boolean | UrlTree> 
+  | Promise<boolean | UrlTree> 
+  | boolean 
+  | UrlTree {
+    return this.authSrv.user$.pipe(
+      take(1),
+      map(user =>{
+        console.log("User ->", user);
+        if (user) {
+          return true;
+        }else{
+          //Regresar a login
+          console.log("Acceso Denegado")
+          this.router.navigateByUrl('/login');
+          return false;
+        }
+      })
+    )
   }
   
   

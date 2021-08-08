@@ -1,9 +1,36 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>detalle</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detalle Pedido</ion-card-title>
+      <ion-card-subtitle>Usuario: Juan Pelaez</ion-card-subtitle>
+      <ion-card-subtitle>Direccion: Av. Loja y Pichincha</ion-card-subtitle>
+
+    </ion-card-header>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Producto 1 </ion-label>
+      <ion-label>Cantidad: 4 </ion-label>
+      <ion-label>Precio: $5.50 </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-left">Total</ion-card-title>
+      <ion-card-subtitle class="ion-text-right">Subtotal: $59.62</ion-card-subtitle>
+      <ion-card-subtitle class="ion-text-right">Iva: $6.21</ion-card-subtitle>
+      <h3 class="ion-text-right">Total: $65.32</h3>
+      
+    </ion-card-header>
+  </ion-card>
 
 </ion-content>

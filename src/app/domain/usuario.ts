@@ -5,4 +5,4 @@ export class Usuario {
     email: string;
     contrasena: string;
     activo: boolean;
-}
+}   

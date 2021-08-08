@@ -78,10 +78,6 @@ const routes: Routes = [
     loadChildren: () => import('./user/faq/faq.module').then( m => m.FaqPageModule),canActivate: [AuthGuard]
   },
   {
-    path: 'admin',
-    loadChildren: () => import('./admin/tabs/tabs.module').then( m => m.TabsPageModule)
-  },
-  {
     path: 'inicio',
     loadChildren: () => import('./admin/inicio/inicio.module').then( m => m.InicioPageModule)
   },

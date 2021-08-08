@@ -8,26 +8,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private authSrv: AuthService, private router: Router ){}
-
-  
-  canActivate(
-    route: ActivatedRouteSnapshot, 
-    state: RouterStateSnapshot
-  ): 
-
-  | Observable<boolean | UrlTree> 
-  | Promise<boolean | UrlTree> 
-  | boolean 
-  | UrlTree {
-
-    if (this.authSrv.isLogged) {
-      return true;
-    }
-    
-    console.log('Acceso Denegado');
-    this.router.navigateByUrl('/login');
-    return false;
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    throw new Error('Method not implemented.');
   }
+  
   
 }

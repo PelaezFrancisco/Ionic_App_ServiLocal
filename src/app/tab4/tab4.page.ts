@@ -19,8 +19,6 @@ export class Tab4Page implements OnInit {
     
   }
 
-    
-
   onLogout(){
     console.log('Se cerro la sesion');
     this.afAuth.signOut();

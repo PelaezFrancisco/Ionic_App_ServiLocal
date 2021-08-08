@@ -5,6 +5,11 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
@@ -27,14 +32,23 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
+  
   {
     path: 'registrarse',
     loadChildren: () => import('./pages/registrarse/registrarse.module').then( m => m.RegistrarsePageModule)
   },
   {
     path: 'tab5',
-    loadChildren: () => import('./tab5/tab5.module').then( m => m.Tab5PageModule)
+    loadChildren: () => import('./tab5/tab5.module').then( m => m.Tab5PageModule),canActivate: [AuthGuard]
+  },  {
+    path: 'forgetp',
+    loadChildren: () => import('./pages/forgetp/forgetp.module').then( m => m.ForgetpPageModule)
+  },
+  {
+    path: 'email',
+    loadChildren: () => import('./pages/email/email.module').then( m => m.EmailPageModule)
   }
+
 
 ];
 @NgModule({

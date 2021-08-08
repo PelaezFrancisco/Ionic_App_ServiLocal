@@ -17,11 +17,15 @@ export class RegistrarsePage implements OnInit {
   ngOnInit() {
   }
 
-  async onRegister(){
-    const user = await this.authSvc.onRegister(this.user);
-    if( user){
-      console.log('Successfully created user!');
-      this.router.navigateByUrl('/tabs/tab1');
+  async onRegister(email, password){
+    try {
+      const user = await this.authSvc.register(email.value, password.value);
+      if (user) {
+        console.log("User -> ", user);
+        this.router.navigateByUrl('/email')
+      }
+    } catch (error) {
+      console.log("Error-> ",error);
     }
   }
 

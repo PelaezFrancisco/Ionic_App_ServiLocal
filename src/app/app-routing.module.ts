@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: 'detalle',
     loadChildren: () => import('./pages/pedido/detalle/detalle.module').then( m => m.DetallePageModule)
+  },
+  {
+    path: 'edit-info',
+    loadChildren: () => import('./user/edit-info/edit-info.module').then( m => m.EditInfoPageModule)
   }
 ];
 @NgModule({

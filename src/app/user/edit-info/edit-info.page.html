@@ -1,0 +1,65 @@
+
+<ion-content>
+  <!--Boton Volver-->
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!--Contenido-->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Editar Informacion:</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Imagen de Perfil:</ion-card-title>
+      <ion-grid class="ion-float-left">
+        <ion-row>
+          <ion-col>
+            <img class="imgCat" src="../../assets/images/user.jpg"/>
+          </ion-col>
+          <ion-col class="colUser">
+            <div class="imgEditar">
+              <ion-button class="btnEditar" color="warning" href="#">Cambiar</ion-button>
+              <ion-button class="btnEditar" color="danger" href="#">Eliminar</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+     
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Datos:</ion-card-title>
+      <br>
+      <ion-item>
+        <ion-label position="fixed">Nombres:</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="fixed">Direccion:</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="fixed">Telefono:</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="fixed">Email:</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+      <br>
+      <ion-button class="btnGuardar" color="success" href="#">Guardar Cambios</ion-button>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>

@@ -8,7 +8,6 @@
 
 <ion-content [fullscreen]="true">
     <ion-button (click)="onLogout()">Log out</ion-button>
-    <ion-button>Bienvenido</ion-button>
 </ion-content>
 
 <ion-content [fullscreen]="true">
@@ -102,7 +101,7 @@
         <ion-grid class="ion-float-left">
             <ion-row>
                 <ion-col>
-                    <ion-button class='btnCerrar' color="danger">Cerrar Sesion</ion-button>
+                    <ion-button class='btnCerrar' color="danger" (click)="onLogout()">Cerrar Sesion</ion-button>
                 </ion-col>
             </ion-row>
         </ion-grid>

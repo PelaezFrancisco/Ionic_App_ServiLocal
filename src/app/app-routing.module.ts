@@ -41,6 +41,18 @@ const routes: Routes = [
   {
     path: 'edit-info',
     loadChildren: () => import('./user/edit-info/edit-info.module').then( m => m.EditInfoPageModule)
+  },
+  {
+    path: 'edit-pass',
+    loadChildren: () => import('./user/edit-pass/edit-pass.module').then( m => m.EditPassPageModule)
+  },
+  {
+    path: 'politicas',
+    loadChildren: () => import('./user/politicas/politicas.module').then( m => m.PoliticasPageModule)
+  },
+  {
+    path: 'faq',
+    loadChildren: () => import('./user/faq/faq.module').then( m => m.FaqPageModule)
   }
 ];
 @NgModule({

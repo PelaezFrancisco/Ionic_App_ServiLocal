@@ -12,7 +12,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppComponent } from './app.component';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
-
+import { AgmCoreModule } from '@agm/core';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,7 +21,11 @@ import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ng
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AgmCoreModule.forRoot({
+      apiKey:''
+    })
+    
 
   ],
 

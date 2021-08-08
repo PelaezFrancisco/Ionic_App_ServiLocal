@@ -93,6 +93,10 @@ const routes: Routes = [
     path: 'perfil',
     loadChildren: () => import('./admin/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./admin/mapa/mapa.module').then( m => m.MapaPageModule)
+  },
 
 
 ];

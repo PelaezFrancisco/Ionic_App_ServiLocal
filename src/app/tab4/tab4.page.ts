@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-tab4',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab4Page implements OnInit {
 
-  constructor() { }
+  constructor(private authSrv: AuthService, 
+    private router: Router, 
+    private afAuth: AngularFireAuth) {}
 
-  ngOnInit() {
+
+  ngOnInit(): void {
+    
+  }
+
+  onLogout(){
+    console.log('Se cerro la sesion');
+    this.authSrv.logout();
+    this.router.navigateByUrl('/login');
   }
 
 }

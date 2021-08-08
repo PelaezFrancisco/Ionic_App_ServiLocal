@@ -1,0 +1,77 @@
+<ion-content>
+
+    <ion-grid class="grid1">
+
+        <ion-row class="row1">
+            <ion-col>
+
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+    <ion-slide>
+        <div class="contaier-login">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-label>Iniciar Sesion</ion-label>
+                    </ion-col>
+                </ion-row>
+                <form>
+                    <ion-row>
+                        <ion-col>
+                            <ion-list>
+
+                                <ion-item>
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                    <ion-input name="email" #email type="text" required placeholder="Email"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-icon name="lock-open-outline"></ion-icon>
+                                    <ion-input name="password1" #password type="password" required placeholder="Contraseña"></ion-input>
+                                </ion-item>
+                            </ion-list>
+                        </ion-col>
+
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <ion-label>
+                                <p class="ion-text-end" (click)="recuperarPass()">
+                                    <a>¿Olvidaste tu Contraseña ?</a>
+                                </p>
+                            </ion-label>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <ion-button fill="solid" expand="full" type="submit" (click)="onLogin(email, password)">
+                                Iniciar Sesion
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <ion-label>
+                                <h3>Iniciar Sesion con</h3>
+                            </ion-label>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-button type="submit" (click)="onLoginGoogle()">
+                        <ion-icon name="logo-google"></ion-icon>
+                    </ion-button>
+                    <ion-row>
+                        <ion-col>
+                            <ion-label>
+                                <p class="ion-text-center" (click)="registrarse()">
+                                    <a>¿No tienes cuenta ? Registrate</a>
+                                </p>
+                            </ion-label>
+                        </ion-col>
+                    </ion-row>
+                </form>
+            </ion-grid>
+        </div>
+    </ion-slide>

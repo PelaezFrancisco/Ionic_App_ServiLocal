@@ -1,0 +1,49 @@
+<ion-content>
+
+    <ion-grid class="grid1">
+
+        <ion-row class="row1">
+            <ion-col>
+
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="row2">
+            <ion-col>
+
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+    <ion-slide>
+        <div class="contaier-login">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-label>Recuperar Constraseña</ion-label>
+                    </ion-col>
+                </ion-row>
+                <form>
+                    <ion-row>
+                        <ion-col>
+                            <ion-list>
+
+                                <ion-item>
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                    <ion-input name="email" #email type="text" required placeholder="Email"></ion-input>
+                                </ion-item>
+                            </ion-list>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <ion-button fill="solid" expand="full" type="submit" (click)="onResestPass(email)">
+                                Restablecer Contraseña
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </form>
+            </ion-grid>
+        </div>
+    </ion-slide>

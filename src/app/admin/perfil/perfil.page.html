@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar>
         <ion-title>
-            Tab 4
+            Perfil
         </ion-title>
     </ion-toolbar>
 </ion-header>
@@ -9,7 +9,7 @@
 
     <ion-card>
         <ion-card-header>
-            <ion-card-title>Usuario</ion-card-title>
+            <ion-card-title>Local</ion-card-title>
             <ion-grid class="ion-float-left">
                 <ion-row>
                     <ion-col>
@@ -17,7 +17,7 @@
                     </ion-col>
                     <ion-col class="colUser">
                         <div>
-                            <h4 class="ion-text-right">Juan Pelaez</h4>
+                            <h4 class="ion-text-right">Nombre Local</h4>
                             <h5 class="ion-text-right">Av. Remigio Crespo 4-58</h5>
                             <ion-button class="btnEditar" color="warning" href="#">Editar</ion-button>
                         </div>
@@ -49,18 +49,16 @@
         <ion-grid class="ion-float-left">
             <ion-row>
                 <ion-col style="width:400px;">
-                    <h3>Metodo de Pago:</h3>
-                    <div class="insideCard2">
-                        <h4>- Cash</h4>
-                    </div>
+                    <h3>Agregar Local:</h3>
                 </ion-col>
                 <ion-col>
-                    <ion-button class="btnEditarPago" color="warning" href="#">Editar</ion-button>
+                    <ion-fab-button class="btnFAQ">
+                        <ion-icon name="add"></ion-icon>
+                    </ion-fab-button>
                 </ion-col>
             </ion-row>
         </ion-grid>
     </ion-card>
-
 
     <ion-card>
         <ion-grid class="ion-float-left">
@@ -96,7 +94,7 @@
         <ion-grid class="ion-float-left">
             <ion-row>
                 <ion-col>
-                    <ion-button class='btnCerrar' color="danger" (click)="onLogout()">Cerrar Sesion</ion-button>
+                    <ion-button class='btnCerrar' color="danger">Cerrar Sesion</ion-button>
                 </ion-col>
             </ion-row>
         </ion-grid>

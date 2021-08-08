@@ -40,13 +40,42 @@ const routes: Routes = [
   {
     path: 'tab5',
     loadChildren: () => import('./tab5/tab5.module').then( m => m.Tab5PageModule),canActivate: [AuthGuard]
-  },  {
+  },
+  {
     path: 'forgetp',
     loadChildren: () => import('./pages/forgetp/forgetp.module').then( m => m.ForgetpPageModule)
   },
   {
     path: 'email',
     loadChildren: () => import('./pages/email/email.module').then( m => m.EmailPageModule)
+  },
+  {
+    path: 'local',
+    loadChildren: () => import('./pages/local/local.module').then( m => m.LocalPageModule)
+  },
+  {
+    path: 'producto',
+    loadChildren: () => import('./pages/producto/producto.module').then( m => m.ProductoPageModule)
+  },
+  {
+    path: 'detalle',
+    loadChildren: () => import('./pages/pedido/detalle/detalle.module').then( m => m.DetallePageModule)
+  },
+  {
+    path: 'edit-info',
+    loadChildren: () => import('./user/edit-info/edit-info.module').then( m => m.EditInfoPageModule)
+  },
+  {
+    path: 'edit-pass',
+    loadChildren: () => import('./user/edit-pass/edit-pass.module').then( m => m.EditPassPageModule)
+  },
+  {
+    path: 'politicas',
+    loadChildren: () => import('./user/politicas/politicas.module').then( m => m.PoliticasPageModule)
+  },
+  {
+    path: 'faq',
+    loadChildren: () => import('./user/faq/faq.module').then( m => m.FaqPageModule)
   }
 
 

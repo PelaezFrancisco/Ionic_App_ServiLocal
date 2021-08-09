@@ -1,5 +1,8 @@
 
 <ion-content>
+
+<ion-progress-bar [value]="uploadProgress" color="tertiary"></ion-progress-bar>
+
   <!--Boton Volver-->
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
     <ion-fab-button>
@@ -24,7 +27,7 @@
           </ion-col>
           <ion-col class="colUser">
             <div class="imgEditar">
-              <ion-button class="btnEditar" color="warning" href="#">Cambiar</ion-button>
+              <ion-button (click)="uploadFile(f)" class="btnEditar" color="warning" href="#">Cambiar</ion-button>
               <ion-button class="btnEditar" color="danger" href="#">Eliminar</ion-button>
             </div>
           </ion-col>

@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LocalPageRoutingModule } from './local-routing.module';
+import { CloudListPageRoutingModule } from './cloud-list-routing.module';
 
-import { LocalPage } from './local.page';
-import { RouterModule } from '@angular/router';
+import { CloudListPage } from './cloud-list.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LocalPageRoutingModule,
+    CloudListPageRoutingModule
   ],
-  declarations: [LocalPage]
+  declarations: [CloudListPage]
 })
-export class LocalPageModule {}
+export class CloudListPageModule {}

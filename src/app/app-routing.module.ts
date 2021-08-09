@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { DataResolverService } from './resolver/data-resolver.service';
 
 const routes: Routes = [
   {
@@ -92,6 +93,10 @@ const routes: Routes = [
   {
     path: 'mapa',
     loadChildren: () => import('./admin/mapa/mapa.module').then( m => m.MapaPageModule)
+  },
+  {
+    path: 'cloud-list',
+    loadChildren: () => import('./cloud-list/cloud-list.module').then( m => m.CloudListPageModule)
   },
 
 

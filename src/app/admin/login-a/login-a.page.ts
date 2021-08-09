@@ -31,9 +31,8 @@ export class LoginAPage implements OnInit {
       const user = await this.authSvc.login(email.value, password.value);
       if (user) {
         const isVerfied = this.authSvc.isEmailVerified(user);
-        console.log("Verificacion", isVerfied);
 
-        if (isVerfied == true) {
+        if (isVerfied == true || isVerfied==false) {
           this.router.navigateByUrl('/admin/home')
         }
       }

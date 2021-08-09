@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/shared/user.interface';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-email',
@@ -13,7 +14,7 @@ export class EmailPage implements OnInit {
   user$: Observable<User> = this.authSrv.afAuth.user;
 
 
-  constructor(private authSrv: AuthService) { }
+  constructor(private authSrv: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -30,5 +31,9 @@ export class EmailPage implements OnInit {
 
   ngOnDestroy(): void{
     this.authSrv.logout();
+  }
+
+  iniciarSesion(){
+    this.router.navigateByUrl('/principal')
   }
 }

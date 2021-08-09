@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/domain/user';
 
 @Component({
   selector: 'app-registrarse',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegistrarsePage implements OnInit {
 
- 
+  user : User = new User();
 
   constructor(private authSvc: AuthService, private router: Router) { }
 
@@ -20,8 +21,10 @@ export class RegistrarsePage implements OnInit {
     try {
       const user = await this.authSvc.register(email.value, password.value);
       if (user) {
-        console.log("User -> ", user);
+        const isVerfied = true;
+        console.log("User -> ", isVerfied);
         this.router.navigateByUrl('/email')
+
       }
     } catch (error) {
       console.log("Error-> ",error);

@@ -27,19 +27,20 @@ export class RegisterAPage implements OnInit {
   }
 
   async onRegister(email, password){
-    console.log(this.local);
-    const path = "Locales";
-    const name = this.local.nombre;
-
-    const res = await this.firestorageService.uploadImage(this.newFile, path, name)
-    this.local.foto= res;
-    this.localesSrv.save(this.local);
+    
 
     try {
       const user = await this.authSvc.register(email.value, password.value);
       if (user) {
         console.log("User -> ", user);
         this.router.navigateByUrl('/email')
+        console.log(this.local);
+        const path = "Locales";
+        const name = this.local.nombre;
+
+        const res = await this.firestorageService.uploadImage(this.newFile, path, name)
+        this.local.foto= res;
+        this.localesSrv.save(this.local);
       }
     } catch (error) {
       console.log("Error-> ",error);

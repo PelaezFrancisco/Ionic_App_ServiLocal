@@ -55,6 +55,7 @@ export class AuthService {
     try {
       const {user} = await this.afAuth.createUserWithEmailAndPassword(email, password);
       await this.sendVerificationEmail();
+      this.updateUserData(user);
       return (user);
 
     } catch (error) {

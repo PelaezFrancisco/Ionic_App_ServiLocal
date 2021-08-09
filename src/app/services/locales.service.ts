@@ -17,11 +17,11 @@ export class LocalesService {
     //Hacemos una refencia 
     const refLocal = this.afs.collection("locales");
     
-    if (local.lid == null) {
-      local.lid = this.afs.createId();
+    if (local.uid == null) {
+      local.uid = this.afs.createId();
       local.activo == true;
     }  
-    refLocal.doc(local.lid).set(Object.assign({}, local));
+    refLocal.doc(local.uid).set(Object.assign({}, local));
   }
 
   getLocales(): Observable <any[]> {
@@ -31,6 +31,6 @@ export class LocalesService {
 
   deleteLocales(local: Local ){
     const refLocal = this.afs.collection("locales");
-    refLocal.doc(local.lid).delete();
+    refLocal.doc(local.uid).delete();
   }
   }

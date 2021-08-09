@@ -14,7 +14,7 @@
             <ion-card-header>
                 <ion-card-title>Que Necesitas?</ion-card-title>
             </ion-card-header>
-            <ion-searchbar class="inedxSearch" value="Buscalo!"></ion-searchbar>
+            <ion-searchbar [(ngModel)]="busqueda" (click)="buscar()"  class="inedxSearch" value="Buscalo!"></ion-searchbar>
         </ion-card>
     </div>
 
@@ -25,53 +25,16 @@
             <div>
                 <ion-slides>
                     <!--Local que se repite-->
-                    <ion-slide>
-                        <div class="slide">
-                            <img class="slideImg" src="../../assets/images/fybeca.jpg" />
+                    <ion-slide *ngFor="let l of locales | async" (click)="redirect(l.uid)">
+                        <div >
+                            <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
+                            <img class="slideImg" src="../../assets/images/fybeca.jpg"/>
                             <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
                             <ion-item-divider>
-                                <h3 class="ion-text-left">Farmacia:</h3>
+                                <h3 class="ion-text-left">{{l.categoria}}:</h3>
                             </ion-item-divider>
-                            <h4 class="h4Index">Fybeca</h4>
+                            <h4 class="h4Index">{{l.nombre}}</h4>
                             <h5 class="h5Index">A 450m.</h5>
-                        </div>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <div class="slide">
-                            <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/kfc.jpg" />
-                            <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Restaurante:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">KFC</h4>
-                            <h5 class="h5Index">A 625m.</h5>
-                        </div>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <div class="slide">
-                            <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/tablita.jpg" />
-                            <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Restaurante:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">Tablita del Tartaro</h4>
-                            <h5 class="h5Index">A 660m.</h5>
-                        </div>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <div class="slide">
-                            <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/western.jpg" />
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Banco:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">Western Union</h4>
-                            <h5 class="h5Index">A 700m.</h5>
                         </div>
                     </ion-slide>
                 </ion-slides>
@@ -88,58 +51,19 @@
             <div>
                 <ion-slides>
                     <!--Local que se repite-->
-
-                    <ion-slide>
-                        <div class="slide">
-                            <img class="slideImg" src="../../assets/images/tablita.jpg" />
-                            <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Restaurante:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">Tablita del Tartaro</h4>
-                            <h5 class="h5Index">A 660m.</h5>
-                        </div>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <div class="slide">
+                    <ion-slide *ngFor="let l of locales | async" (click)="redirect(l.uid)">
+                        <div >
                             <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/fybeca.jpg" />
+                            <img class="slideImg" src="../../assets/images/fybeca.jpg"/>
                             <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
                             <ion-item-divider>
-                                <h3 class="ion-text-left">Farmacia:</h3>
+                                <h3 class="ion-text-left">{{l.categoria}}:</h3>
                             </ion-item-divider>
-                            <h4 class="h4Index">Fybeca</h4>
+                            <h4 class="h4Index">{{l.nombre}}</h4>
                             <h5 class="h5Index">A 450m.</h5>
                         </div>
                     </ion-slide>
-
-                    <ion-slide>
-                        <div class="slide">
-                            <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/kfc.jpg" />
-                            <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Restaurante:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">KFC</h4>
-                            <h5 class="h5Index">A 625m.</h5>
-                        </div>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <div class="slide">
-                            <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/western.jpg" />
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Banco:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">Western Union</h4>
-                            <h5 class="h5Index">A 700m.</h5>
-                        </div>
-                    </ion-slide>
                 </ion-slides>
-                <!-- Card de Busqueda -->
             </div>
         </ion-card>
     </div>

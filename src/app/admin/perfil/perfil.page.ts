@@ -25,4 +25,8 @@ export class PerfilPage implements OnInit {
     this.router.navigateByUrl('/login-a');
   }
 
+  onMapa(){
+    this.router.navigateByUrl('mapa')
+  }
+
 }

@@ -31,27 +31,33 @@
 
                                 <ion-item>
                                     <ion-icon name="storefront-outline"></ion-icon>
-                                    <ion-input name="nombre" #nombre type="text" required placeholder=" Nombre"></ion-input>
+                                    <ion-input name="nombre" #nombre type="text" [(ngModel)]="local.nombre" required placeholder=" Nombre"></ion-input>
                                 </ion-item>
                                 <ion-item>
                                     <ion-icon name="create-outline"></ion-icon>
-                                    <ion-input name="descripcion" #descipcion type="text" required placeholder=" Descripcion"></ion-input>
+                                    <ion-input name="descripcion" #descipcion type="text" [(ngModel)]="local.ruc" required placeholder=" RUC"></ion-input>
                                 </ion-item>
                                 <ion-item>
                                     <ion-icon name="mail-outline"></ion-icon>
-                                    <ion-input name="email" #email type="text" required placeholder=" Email"></ion-input>
+                                    <ion-input name="email" #email type="text" [(ngModel)]="local.email" required placeholder=" Email"></ion-input>
                                 </ion-item>
                                 <ion-item>
                                     <ion-icon name="lock-open-outline"></ion-icon>
-                                    <ion-input name="password1" #password type="password" required placeholder=" Contraseña"></ion-input>
+                                    <ion-input name="password1" #password type="password" [(ngModel)]="local.pass" required placeholder=" Contraseña"></ion-input>
                                 </ion-item>
                                 <ion-item>
                                     <ion-icon name="lock-open-outline"></ion-icon>
                                     <ion-input name="password2" type="password" required placeholder=" Repetir Contraseña"></ion-input>
                                 </ion-item>
                                 <ion-item>
-                                    <ion-icon name="images-outline"></ion-icon>
-                                    <ion-input accept=".png , .jpg " type="file"></ion-input>
+                                    <ion-buttons slot="end">
+                                        <ion-button>
+                                            <label for="file-upload">
+                                            <ion-icon name="images-outline"> </ion-icon>
+                                        </label>
+                                            <input (change)="newImageUpload($event)" id="file-upload" style="display: none;" accept="image/*" type="file" required>
+                                        </ion-button>
+                                    </ion-buttons>
                                 </ion-item>
                             </ion-list>
                         </ion-col>

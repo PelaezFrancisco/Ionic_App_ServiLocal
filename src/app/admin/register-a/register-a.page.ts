@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
+import { Local } from '../../domain/locales';
+import { LocalesService } from '../../services/locales.service';
+import { FirestorageService } from 'src/app/services/firestorage.service';
 
 @Component({
   selector: 'app-register-a',
@@ -10,12 +13,21 @@ import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/stor
 })
 export class RegisterAPage implements OnInit {
 
-  constructor(private authSvc: AuthService, private router: Router, private storage: AngularFireStorage) { }
+  constructor(private authSvc: AuthService, 
+    private localesSrv: LocalesService, 
+    private router: Router,
+    public authSrv: AuthService,
+    public firestorageService: FirestorageService) { }
+
+  local : Local = new Local();
+  newImage = '';
+  newFile = '';
 
   ngOnInit() {
   }
 
   async onRegister(email, password){
+
     try {
       const user = await this.authSvc.register(email.value, password.value);
       if (user) {
@@ -24,8 +36,25 @@ export class RegisterAPage implements OnInit {
       }
     } catch (error) {
       console.log("Error-> ",error);
+    
     }
   }
+
+  async newImageUpload(event:any){
+
+    console.log(event)
+    if (event.target.files && event.target.files[0]) {
+      this.newFile = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = ((image)=> {
+        this.newImage = image.target.result as string;
+      });
+      reader.readAsDataURL(event.target.files[0]);
+    }
+    
+
+  }
+
 
 
 }

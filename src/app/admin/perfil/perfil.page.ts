@@ -26,7 +26,8 @@ export class PerfilPage implements OnInit {
   }
 
   onMapa(){
-    this.router.navigateByUrl('mapa')
+    this.router.navigateByUrl('/mapa')
   }
+  
 
 }

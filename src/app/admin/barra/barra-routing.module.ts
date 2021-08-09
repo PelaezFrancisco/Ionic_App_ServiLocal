@@ -27,14 +27,14 @@ const routes: Routes = [
       
       {
         path: '',
-        redirectTo: '/admin/home-email',
+        redirectTo: '/admin/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/admin/home-email',
+    redirectTo: '/admin/home',
     pathMatch: 'full'
   }
 ];

@@ -27,6 +27,10 @@ export class ProductosService {
     return this.afs.collection("productos").valueChanges();
 
   }
+  findProductos(busqueda): Observable<any[]> {
+    return this.afs.collection("productos",
+    ref => ref.where("local","==",busqueda)).valueChanges();
+  }
 
   deleteProducto(producto: Producto){
     const refProductos = this.afs.collection("productos");

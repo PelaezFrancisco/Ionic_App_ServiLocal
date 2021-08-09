@@ -12,11 +12,11 @@ export class LocalService {
 
   save(locales: Local){
     const refElectro = this.afs.collection("Posts");
-    if (locales.lid == null){
-      locales.lid = this.afs.createId();
+    if (locales.uid == null){
+      locales.uid = this.afs.createId();
       
     }
-    refElectro.doc(locales.lid).set(Object.assign({},locales));
+    refElectro.doc(locales.uid).set(Object.assign({},locales));
   }
 
   getLocales(): Observable<any[]> {
@@ -32,4 +32,5 @@ export class LocalService {
     return this.afs.collection("Posts",
     ref => ref.where("uid","==",busqueda)).valueChanges();
   }
+  
 }

@@ -28,6 +28,10 @@ export class LocalesService {
     return this.afs.collection("locales").valueChanges();
 
   }
+  findLocales(busqueda): Observable<any[]> {
+    return this.afs.collection("Posts",
+    ref => ref.where("local","==",busqueda)).valueChanges();
+  }
 
   deleteLocales(local: Local ){
     const refLocal = this.afs.collection("locales");

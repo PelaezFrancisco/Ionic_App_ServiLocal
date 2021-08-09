@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../shared/user.interface'
 import { Observable } from 'rxjs';
@@ -24,10 +24,9 @@ export class InicioPage implements OnInit {
   newImage = '';
 
   ngOnInit() {
-    console.log("Inicio");
-    this.productos = this.productosSrv.getProductos();
+    
+    this.productos = this.productosSrv.findProductos("Fybeca");
 
-  
   }
   update(producto: Producto){
     console.log("Ingresa al metodo")

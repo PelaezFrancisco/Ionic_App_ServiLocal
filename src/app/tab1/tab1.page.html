@@ -51,11 +51,10 @@
             <div>
                 <ion-slides>
                     <!--Local que se repite-->
-
-                    <ion-slide *ngFor="let l of locales | async">
-                        <div class="slide">
+                    <ion-slide *ngFor="let l of locales | async" (click)="redirect(l.uid)">
+                        <div >
                             <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/fybeca.jpg" />
+                            <img class="slideImg" src="../../assets/images/fybeca.jpg"/>
                             <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
                             <ion-item-divider>
                                 <h3 class="ion-text-left">{{l.categoria}}:</h3>
@@ -65,7 +64,6 @@
                         </div>
                     </ion-slide>
                 </ion-slides>
-                <!-- Card de Busqueda -->
             </div>
         </ion-card>
     </div>

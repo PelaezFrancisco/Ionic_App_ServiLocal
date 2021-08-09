@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Locales } from '../domain/locales';
+import { Local } from '../domain/locales';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,13 +10,13 @@ export class LocalService {
 
   constructor(public afs: AngularFirestore) { }
 
-  save(locales: Locales){
+  save(locales: Local){
     const refElectro = this.afs.collection("Posts");
-    if (locales.uid == null){
-      locales.uid = this.afs.createId();
+    if (locales.lid == null){
+      locales.lid = this.afs.createId();
       
     }
-    refElectro.doc(locales.uid).set(Object.assign({},locales));
+    refElectro.doc(locales.lid).set(Object.assign({},locales));
   }
 
   getLocales(): Observable<any[]> {

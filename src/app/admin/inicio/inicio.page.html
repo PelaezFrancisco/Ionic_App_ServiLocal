@@ -7,140 +7,49 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="authSrv.user$ | async as user">
     <!-- Card de Busqueda -->
     <div>
         <ion-card class="cardIndex">
             <ion-card-header>
-                <ion-card-title>Que Necesitas?</ion-card-title>
+                <ion-card-title>Bienvenido: {{user.uid}}</ion-card-title>
             </ion-card-header>
-            <ion-searchbar class="inedxSearch" value="Buscalo!"></ion-searchbar>
         </ion-card>
     </div>
 
-    <div>
-        <ion-card class="cardIndex">
-            <h2 class="ion-text-left" style="margin-left: 5%;">Cerca de Ti</h2>
-            <!-- Card de Local -->
-            <div>
-                <ion-slides>
-                    <!--Local que se repite-->
-                    <ion-slide>
-                        <div class="slide">
-                            <img class="slideImg" src="../../assets/images/fybeca.jpg" />
-                            <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Farmacia:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">Fybeca</h4>
-                            <h5 class="h5Index">A 450m.</h5>
-                        </div>
-                    </ion-slide>
+    <ion-grid class="ion-float-left" *ngFor="let producto of productos | async">
+        <ion-card>
+            <img [src]="producto.foto" />
+            <ion-card>
+                <ion-row>
+                    <ion-col>
+                        <ion-item>
+                            <ion-label>Producto: {{producto.nombre}} </ion-label>
+                        </ion-item>
 
-                    <ion-slide>
-                        <div class="slide">
-                            <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/kfc.jpg" />
-                            <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Restaurante:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">KFC</h4>
-                            <h5 class="h5Index">A 625m.</h5>
-                        </div>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <div class="slide">
-                            <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/tablita.jpg" />
-                            <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Restaurante:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">Tablita del Tartaro</h4>
-                            <h5 class="h5Index">A 660m.</h5>
-                        </div>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <div class="slide">
-                            <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/western.jpg" />
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Banco:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">Western Union</h4>
-                            <h5 class="h5Index">A 700m.</h5>
-                        </div>
-                    </ion-slide>
-                </ion-slides>
-            </div>
+                        <ion-item>
+                            <ion-label>Descripcion: {{producto.descripcion}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Precio: {{producto.precio}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Stock: {{producto.stock}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Local: {{producto.local}}</ion-label>
+                        </ion-item>
+                        <ion-row>
+                            <ion-col>
+                                <ion-button fill="solid" expand="full" (click)="update(producto)">Editar</ion-button>
+                                <ion-button fill="solid" expand="full" (click)="borrar(producto)">Eliminar</ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
 
 
+            </ion-card>
         </ion-card>
-    </div>
-
-    <div>
-        <ion-card class="cardIndex">
-            <h2 class="ion-text-left" style="margin-left: 5%;">Porque Eligiste antes...</h2>
-            <!-- Card de Local -->
-            <div>
-                <ion-slides>
-                    <!--Local que se repite-->
-
-                    <ion-slide>
-                        <div class="slide">
-                            <img class="slideImg" src="../../assets/images/tablita.jpg" />
-                            <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Restaurante:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">Tablita del Tartaro</h4>
-                            <h5 class="h5Index">A 660m.</h5>
-                        </div>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <div class="slide">
-                            <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/fybeca.jpg" />
-                            <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Farmacia:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">Fybeca</h4>
-                            <h5 class="h5Index">A 450m.</h5>
-                        </div>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <div class="slide">
-                            <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/kfc.jpg" />
-                            <ion-icon class="arrowR" name="chevron-forward-outline"></ion-icon>
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Restaurante:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">KFC</h4>
-                            <h5 class="h5Index">A 625m.</h5>
-                        </div>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <div class="slide">
-                            <ion-icon class="arrowL" name="chevron-back-outline"></ion-icon>
-                            <img class="slideImg" src="../../assets/images/western.jpg" />
-                            <ion-item-divider>
-                                <h3 class="ion-text-left">Banco:</h3>
-                            </ion-item-divider>
-                            <h4 class="h4Index">Western Union</h4>
-                            <h5 class="h5Index">A 700m.</h5>
-                        </div>
-                    </ion-slide>
-                </ion-slides>
-                <!-- Card de Busqueda -->
-            </div>
-        </ion-card>
-    </div>
+    </ion-grid>
 </ion-content>

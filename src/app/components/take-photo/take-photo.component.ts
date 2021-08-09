@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
 
 @Component({
-  selector: 'app-register-a',
-  templateUrl: './register-a.page.html',
-  styleUrls: ['./register-a.page.scss'],
+  selector: 'app-take-photo',
+  templateUrl: './take-photo.component.html',
+  styleUrls: ['./take-photo.component.scss'],
 })
-export class RegisterAPage implements OnInit {
+export class TakePhotoComponent implements OnInit {
 
   constructor(private authSvc: AuthService, private router: Router, private storage: AngularFireStorage) { }
 
@@ -25,6 +25,15 @@ export class RegisterAPage implements OnInit {
     } catch (error) {
       console.log("Error-> ",error);
     }
+  }
+
+  onUpload(e){
+    const id = Math.random().toString(36).substring(2);
+    const file = e.target.file[0];
+    const filePath = 'upload/imagen.png';
+    const ref = this.storage.ref(filePath);
+    const task = this.storage.upload(filePath, file);
+
   }
 
 

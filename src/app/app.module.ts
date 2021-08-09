@@ -13,6 +13,8 @@ import { AppComponent } from './app.component';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
 import { AgmCoreModule } from '@agm/core';
+import { AngularFireStorageModule, BUCKET } from '@angular/fire/storage';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -22,6 +24,7 @@ import { AgmCoreModule } from '@agm/core';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireStorageModule,
     AgmCoreModule.forRoot({
       apiKey:''
     })
@@ -30,7 +33,7 @@ import { AgmCoreModule } from '@agm/core';
   ],
 
   providers: [GooglePlus,FirebaseAuthentication,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy } ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

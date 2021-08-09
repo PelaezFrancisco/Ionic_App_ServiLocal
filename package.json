@@ -26,6 +26,7 @@
         "@capacitor/core": "3.1.2",
         "@capacitor/haptics": "1.0.2",
         "@capacitor/keyboard": "1.0.2",
+        "@firebase/storage": "^0.6.2",
         "@ionic-native/core": "^5.35.0",
         "@ionic-native/firebase-authentication": "^5.35.0",
         "@ionic-native/google-plus": "^5.35.0",

@@ -1,7 +1,9 @@
-export class Locales {
-    uid: string;
+export class Local {
+    lid: string;
     nombre: string;
-    categoria: string;
-    ubicacion: string;
-    image: string;
-}   
+    ruc: string;
+    email: string;
+    pass: string;
+    foto: string;
+    activo: boolean;
+} 

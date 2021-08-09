@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/domain/user';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
@@ -10,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class RegistrarsePage implements OnInit {
 
-  user : User = new User();
+ 
 
   constructor(private authSvc: AuthService, private router: Router) { }
 

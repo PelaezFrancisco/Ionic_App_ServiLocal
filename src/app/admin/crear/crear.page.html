@@ -12,51 +12,69 @@
         <ion-card-header>
         </ion-card-header>
         <ion-card-content>
-            <form>
-                <ion-row>
-                    <ion-col>
-                        <ion-list>
-                            <ion-card>
-                                <ion-item>
-                                    <ion-label>Nombre: </ion-label>
-                                    <ion-input name="nombre" #nombre type="text" required placeholder=" "></ion-input>
-                                </ion-item>
-                            </ion-card>
-                            <ion-card>
-                                <ion-item>
-                                    <ion-label>Descripcion: </ion-label>
-                                    <ion-input name="descripcion" #descripcion type="text" required placeholder=" "></ion-input>
-                                </ion-item>
-                            </ion-card>
-                            <ion-card>
-                                <ion-item>
-                                    <ion-label>Precio: </ion-label>
-                                    <ion-input name="precio" #precio type="text" required placeholder=" "></ion-input>
-                                </ion-item>
-                            </ion-card>
-                            <ion-card>
-                                <ion-item>
-                                    <ion-label>Stock: </ion-label>
-                                    <ion-input name="Stock" #stock type="text" required placeholder=" "></ion-input>
-                                </ion-item>
-                            </ion-card>
-                            <ion-card>
-                                <ion-item>
-                                    <ion-label>Imagen: </ion-label>
-                                    <ion-input name="image" #image type="file" required></ion-input>
-                                </ion-item>
-                            </ion-card>
-                        </ion-list>
-                    </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col>
-                        <ion-button color="success" expand="full" type="submit">
-                            Agregar
-                        </ion-button>
-                    </ion-col>
-                </ion-row>
-            </form>
+            <ion-row>
+                <ion-col>
+                    <ion-list>
+                        <ion-card>
+                            <ion-card-title>Bienvenido: </ion-card-title>
+
+                            <ion-item>
+                                <ion-label>Nombre: </ion-label>
+                                <ion-input name="nombre" [(ngModel)]="producto.nombre" required placeholder=" "></ion-input>
+                            </ion-item>
+                        </ion-card>
+                        <ion-card>
+                            <ion-item>
+                                <ion-label>Descripcion: </ion-label>
+                                <ion-input name="descripcion" [(ngModel)]="producto.descripcion" required placeholder=" "></ion-input>
+                            </ion-item>
+                        </ion-card>
+                        <ion-card *ngIf="authSrv.user$ | async as user">
+                            <ion-item>
+                                <ion-label>Local: </ion-label>
+                                <ion-input name="local" [(ngModel)]="producto.local" required placeholder="{{user.uid}}"></ion-input>
+                            </ion-item>
+                        </ion-card>
+
+                        <ion-card>
+                            <ion-item>
+                                <ion-label>Precio: </ion-label>
+                                <ion-input name="precio" [(ngModel)]="producto.precio" required placeholder=" "></ion-input>
+                            </ion-item>
+                        </ion-card>
+                        <ion-card>
+                            <ion-item>
+                                <ion-label>Stock: </ion-label>
+                                <ion-input name="Stock" [(ngModel)]="producto.stock" required placeholder=" "></ion-input>
+                            </ion-item>
+                        </ion-card>
+                        <ion-card>
+                            <ion-item>
+                                <ion-buttons slot="end">
+                                    <ion-button>
+                                        <label for="file-upload">
+                                        <ion-icon name="images-outline"> </ion-icon>
+                                    </label>
+                                        <input (change)="newImageUpload($event)" id="file-upload" style="display: none;" accept="image/*" type="file" required>
+                                    </ion-button>
+                                </ion-buttons>
+                            </ion-item>
+                        </ion-card>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-button color="primary" fill="solid" expand="full" (click)="guardar()">Guardar</ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <img [src]="newImage">
+                </ion-col>
+            </ion-row>
+
         </ion-card-content>
+
     </ion-card>
 </ion-content>

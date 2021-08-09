@@ -6,7 +6,7 @@ import { DataResolverService } from './resolver/data-resolver.service';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'principal',
     pathMatch: 'full'
   },
   {
@@ -95,9 +95,22 @@ const routes: Routes = [
     loadChildren: () => import('./admin/mapa/mapa.module').then( m => m.MapaPageModule)
   },
   {
-    path: 'cloud-list',
-    loadChildren: () => import('./cloud-list/cloud-list.module').then( m => m.CloudListPageModule)
+    path: '',
+    loadChildren: () => import('./admin/barra/barra.module').then( m => m.BarraPageModule)
   },
+  {
+    path: 'principal',
+    loadChildren: () => import('./pages/principal/principal.module').then( m => m.PrincipalPageModule)
+  },
+  {
+    path: 'login-a',
+    loadChildren: () => import('./admin/login-a/login-a.module').then( m => m.LoginAPageModule)
+  },
+  {
+    path: 'register-a',
+    loadChildren: () => import('./admin/register-a/register-a.module').then( m => m.RegisterAPageModule)
+  },
+
 
 
 ];
